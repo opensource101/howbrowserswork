@@ -44,7 +44,7 @@
 					<h1>Web Browsers</h1>
 					<h3>A black box full of code magic</h3>
 					<p>
-						<small>A presentation by <a href="http://creativcoder.xyz">Rahul Sharma</a> / <a href="http://twitter.com/creativcoder">@creativcoder</a></small>
+						<small>By <a href="http://creativcoder.xyz">Rahul Sharma</a> / <a href="http://twitter.com/creativcoder">@creativcoder</a></small>
 					</p>
 				</section>
 
@@ -74,24 +74,38 @@
 						<p>has many moving parts...</p>
 					</section>
 					<section>
-						<h2>Browser Engines</h2>
-						<p></p>
+						<h2>Network Layer</h2>
+						<img src="" alt="">
+						<p>We hit &nbsp;<code>http://www.google.com</code> &nbsp;  over address bar</p>
+						<p>The network layer kicks in...</p>
 					</section>
 					<section>
-						<h2>Basement Level 2</h2>
-						<p></p>
+					Network Layer : (Speaks the HTTP protocol)
+						<p>*Makes tcp connections and send http requests for the given origin (url) which on receiving data may fire another set of get requests.</p>
+						<p>*Responsible for decompressing data received in case, the incoming stream is a gzip/deflate.
+						</p>
+						<p>*Responsible for managing all document, scripts and css stylesheets loads from the remote network
+						</p>
 						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
+					</section>
+					<section>
+						<p>After receiving the requests, it passes the fetched documents to the HTML Parser</p>
+						<br>
 					</section>
 				</section>
 
 				<section>
-					<h2>Slides</h2>
+					<h2>HTML Parser</h2>
 					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
+					*Parses the documents received from network layer to create The DOM Tree.
+					<p>*Mostly a hand written parser, due to the weird html syntax</p>
+					
 					</p>
+					<section>
+						Also the CSS Parser
+
+					</section>
+					<section>Combining above two, we get a Render Tree</section>
 				</section>
 
 				<section>
